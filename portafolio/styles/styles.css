@@ -1,0 +1,75 @@
+/* Variables globales */
+:root {
+    --color-neon: #00f3ff;
+    --color-accent: #ff00ff;
+    --bg-dark: #111827;
+    --bg-card: #1a1a1a;
+}
+
+/* Efectos de neón */
+.neon-text {
+    text-shadow: 0 0 10px var(--color-neon),
+                 0 0 20px var(--color-neon);
+    animation: neonGlow 1.5s ease-in-out infinite alternate;
+}
+
+.neon-subtitle {
+    text-shadow: 0 0 5px var(--color-neon);
+}
+
+/* Animaciones */
+@keyframes neonGlow {
+    from { 
+        text-shadow: 0 0 5px var(--color-neon);
+    }
+    to { 
+        text-shadow: 0 0 20px var(--color-neon),
+                     0 0 30px var(--color-neon);
+    }
+}
+
+/* Estilos para las tarjetas de habilidades */
+.skill-card {
+    background: var(--bg-card);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.skill-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Contenedor de partículas */
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+/* Botones y elementos interactivos */
+.interactive-button {
+    transition: all 0.3s ease;
+}
+
+.interactive-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 243, 255, 0.3);
+}
+
+/* Media queries para responsividad */
+@media (max-width: 768px) {
+    .neon-text {
+        font-size: 2rem;
+    }
+    
+    .skill-card {
+        padding: 1rem;
+    }
+}
