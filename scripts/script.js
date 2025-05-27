@@ -2,7 +2,7 @@
 const particlesConfig = {
     particles: {
         number: { 
-            value: 70,
+            value: 80,
             density: {
                 enable: true,
                 value_area: 800
@@ -10,7 +10,7 @@ const particlesConfig = {
         },
         color: { value: "#00f3ff" },
         opacity: { 
-            value: 0.7,
+            value: 0.8,
             random: false
         },
         size: { 
@@ -33,19 +33,28 @@ const particlesConfig = {
             opacity: 0.9,
             width: 1
         },
-    },
-    interactivity: {
-        detect_on: "canvas",
+    },    interactivity: {
+        detect_on: "window",
         events: {
             onhover: {
+                enable: true,
+                mode: "grab"
+            },
+            onclick: {
                 enable: true,
                 mode: "repulse"
             },
             resize: true
         },
         modes: {
+            grab: {
+                distance: 200,
+                line_linked: {
+                    opacity: 1
+                }
+            },
             repulse: {
-                distance: 100,
+                distance: 200,
                 duration: 0.4
             }
         }
@@ -54,7 +63,9 @@ const particlesConfig = {
 };
 
 // Inicializar partículas
-particlesJS("particles-js", particlesConfig);
+document.addEventListener('DOMContentLoaded', function() {
+    particlesJS("particles-js", particlesConfig);
+});
 
 // Animación de las tarjetas de habilidades
 const animateSkillCards = () => {
