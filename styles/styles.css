@@ -70,6 +70,21 @@
     }
     
     .skill-card {
+        padding: 0.75rem;
+    }
+
+    /* Ajustes de espaciado para móvil */
+    .space-y-8 > * + * {
+        margin-top: 1.5rem;
+    }
+
+    /* Ajustes de tamaño de texto para móvil */
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    /* Ajustes de padding para cards en móvil */
+    .bg-gray-800 {
         padding: 1rem;
     }
 }
